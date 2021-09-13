@@ -16,7 +16,7 @@ module.exports = {
         console.log("Error while finding the current date in database (home.ejs).", err);
       });
 },
- findOneByDateAndUpdate(date, month, year){
+ findOneByDateAndUpdate(date, month, year, meal){
    Day.findOneAndUpdate({date:date,month:month,year:year},
   {"$set": { "date": date},
    "$set": { "month": month},

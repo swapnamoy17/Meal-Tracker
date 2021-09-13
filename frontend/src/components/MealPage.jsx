@@ -8,10 +8,16 @@ import Meal from "../DBModel";
 function MealPage(){
 
   const [mealData, setMealData] = useState({});
+  const [buttonClick, reRender] = useState(0);
   const [input, setInput] = useState("");
 
   const handleInput = event => {
     setInput(event.target.value);
+  };
+
+  const handleButtonClick = () => {
+    console.log("Inside handleButtonClick");
+    reRender(1);
   };
 
   useEffect(() => {
@@ -38,7 +44,6 @@ function MealPage(){
         .then( () => { var new_mealData = mealData;
                        new_mealData.day_entry.meals.push(new Meal({ food: input }));
                        setMealData(new_mealData);
-                       setInput("");
                        });
   }
 

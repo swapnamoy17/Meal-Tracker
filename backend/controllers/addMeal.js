@@ -1,4 +1,6 @@
 const mealDAO = require('../DAO/meal');
+const db = require('../models/models');
+const Meal = db.Meal;
 
 module.exports = {
   getMealPage(req,res){
@@ -31,11 +33,10 @@ module.exports = {
       food: [req.body.food_item]
     });
 
-    mealDAO.findOneByDateAndUpdate(date, month, year)
-           .then( () => console.log("Page updated with added meals."));
+    mealDAO.findOneByDateAndUpdate(date, month, year, meal);
          }
        }
-       
+
     // Day.findOne({date:date,month:month,year:year},
     //   else if(!day){
     //     const a = new Day({

@@ -17,7 +17,7 @@ const Day = mongoose.model("Day",daySchema);
 
 const db = {};
 db.mongoose = mongoose;
-db.url = process.env.MONGODB_SERVER;
+db.url = "mongodb+srv://swap7:moy15428@gettingstarted.inf7f.mongodb.net/calorieDB?retryWrites=true&w=majority";
 db.Day = Day;
 db.Meal = Meal;
 
